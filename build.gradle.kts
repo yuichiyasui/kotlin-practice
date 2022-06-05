@@ -5,6 +5,7 @@ plugins {
 	id("io.spring.dependency-management") version "1.0.11.RELEASE"
 	kotlin("jvm") version "1.6.10"
 	kotlin("plugin.spring") version "1.6.10"
+	id("org.openapi.generator") version "6.0.0"
 }
 
 group = "com.example"
@@ -23,6 +24,21 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 	runtimeOnly("org.postgresql:postgresql")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
+	implementation("org.springdoc:springdoc-openapi-data-rest:1.6.8")
+	implementation("org.springdoc:springdoc-openapi-ui:1.6.8")
+	implementation("org.springdoc:springdoc-openapi-kotlin:1.6.8")
+}
+
+openApiGenerate {
+	val packageName = "com.example.kotlinpractice"
+	generatorName.set("kotlin")
+	inputSpec.set("$rootDir/spec-v1.0.yaml")
+	outputDir.set("$buildDir/generated/openapi")
+	invokerPackage.set(packageName)
+	validateSpec.set(true)
+	apiPackage.set("$packageName.controller")
+	modelPackage.set("$packageName.model")
+	configOptions.put("dateLibrary", "java8")
 }
 
 tasks.withType<KotlinCompile> {
@@ -30,6 +46,7 @@ tasks.withType<KotlinCompile> {
 		freeCompilerArgs = listOf("-Xjsr305=strict")
 		jvmTarget = "17"
 	}
+	dependsOn("openApiGenerate")
 }
 
 tasks.withType<Test> {

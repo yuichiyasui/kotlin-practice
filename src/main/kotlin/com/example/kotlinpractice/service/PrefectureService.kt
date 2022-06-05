@@ -1,11 +1,11 @@
-package com.example.kotlinpractice.servise
+package com.example.kotlinpractice.service
 
 import com.example.kotlinpractice.domain.Prefecture
 import com.example.kotlinpractice.mapper.PrefectureMapper
 import org.springframework.stereotype.Service
 
 @Service
-class PrefectureServise (
+class PrefectureService (
     private val prefectureMapper : PrefectureMapper
         ) {
 
