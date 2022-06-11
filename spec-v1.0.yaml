@@ -3,13 +3,13 @@ info:
   title: Address Manager
   version: 1.0.0
 servers:
-  - url: http:localhost:8080
+  - url: localhost:8080
 paths:
   /prefectures:
     get:
       summary: List all prefectures
       tags:
-        - prefecture
+        - prefectures
       operationId: getPrefectures
       responses:
         '200':
@@ -17,7 +17,8 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Prefectures"
+                type: array
+                $ref: "#/components/schemas/Prefecture"
 
 components:
   schemas:
@@ -38,7 +39,3 @@ components:
         - id
         - name
         - nameKana
-    Prefectures:
-      type: array
-      items:
-        $ref: "#/components/schemas/Prefecture"

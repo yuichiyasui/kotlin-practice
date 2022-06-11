@@ -1,0 +1,4 @@
+docs/Prefecture.md
+docs/PrefecturesApi.md
+src/main/kotlin/com/example/kotlinpractice/api/PrefecturesApi.kt
+src/main/kotlin/org/openapitools/client/models/Prefecture.kt
