@@ -1,6 +1,7 @@
 package com.example.kotlinpractice.controller
 
 import com.example.kotlinpractice.domain.Prefecture
+import com.example.kotlinpractice.generated.api.PrefecturesApi
 import com.example.kotlinpractice.service.PrefectureService
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping

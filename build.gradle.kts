@@ -33,14 +33,14 @@ openApiGenerate {
     val name = "com.example.kotlinpractice"
     generatorName.set("kotlin-spring")
     inputSpec.set("$rootDir/open-api/spec.yaml")
-    outputDir.set("$buildDir/generated")
-    apiPackage.set("$name.api")
-    packageName.set(name)
+    outputDir.set("$rootDir")
     validateSpec.set(true)
-    generateModelTests.set(false)
+    apiPackage.set("$name.generated.api")
+    modelPackage.set("$name.generated.model")
     generateApiTests.set(false)
-    generateModelDocumentation.set(false)
+    generateModelTests.set(false)
     generateApiDocumentation.set(false)
+    generateModelDocumentation.set(false)
     globalProperties.set(
         mapOf(
             "apis" to "",
