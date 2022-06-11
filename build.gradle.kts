@@ -31,13 +31,22 @@ dependencies {
 
 openApiGenerate {
     val name = "com.example.kotlinpractice"
-    generatorName.set("kotlin")
+    generatorName.set("kotlin-spring")
     inputSpec.set("$rootDir/spec-v1.0.yaml")
-    outputDir.set("$rootDir/open-api/generated")
+    outputDir.set("$buildDir/generated")
     apiPackage.set("$name.api")
     packageName.set(name)
-    skipOverwrite.set(true)
     validateSpec.set(true)
+    generateModelTests.set(false)
+    generateApiTests.set(false)
+    generateModelDocumentation.set(false)
+    generateApiDocumentation.set(false)
+    globalProperties.set(
+        mapOf(
+            "apis" to "",
+            "models" to "",
+        )
+    )
     configOptions.set(
         mapOf(
             "dateLibrary" to "java8",
@@ -45,28 +54,14 @@ openApiGenerate {
             "skipDefaultInterface" to "true"
         )
     )
-    additionalProperties.set(
-        mapOf(
-            "apis" to "",
-            "models" to "",
-            "supportingFiles" to "false"
-        )
-    )
-//    globalProperties.set(
-//        mapOf(
-//            "apis" to "",
-//            "models" to "",
-////            "supportingFiles" to "false"
-//        )
-//    )
 }
 
 tasks.withType<KotlinCompile> {
+    dependsOn("openApiGenerate")
     kotlinOptions {
         freeCompilerArgs = listOf("-Xjsr305=strict")
         jvmTarget = "17"
     }
-    dependsOn("openApiGenerate")
 }
 
 tasks.withType<Test> {
