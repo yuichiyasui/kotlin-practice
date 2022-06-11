@@ -32,7 +32,7 @@ dependencies {
 openApiGenerate {
     val name = "com.example.kotlinpractice"
     generatorName.set("kotlin-spring")
-    inputSpec.set("$rootDir/spec-v1.0.yaml")
+    inputSpec.set("$rootDir/open-api/spec.yaml")
     outputDir.set("$buildDir/generated")
     apiPackage.set("$name.api")
     packageName.set(name)

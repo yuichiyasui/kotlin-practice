@@ -1,0 +1,17 @@
+title: 都道府県
+description: 都道府県情報
+type: object
+properties:
+  id:
+    type: integer
+    format: int64
+  name:
+    type: string
+    description: 都道府県名
+  nameKana:
+    type: string
+    description: 都道府県名のふりがな
+required:
+  - id
+  - name
+  - nameKana

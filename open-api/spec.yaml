@@ -1,0 +1,9 @@
+openapi: 3.0.0
+info:
+  title: Address Manager
+  version: 1.0.0
+servers:
+  - url: localhost:8080
+paths:
+  /prefectures:
+    $ref: './paths/prefectures.yaml'

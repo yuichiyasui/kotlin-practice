@@ -1,0 +1,13 @@
+get:
+  summary: List all prefectures
+  tags:
+    - prefectures
+  operationId: getPrefectures
+  responses:
+    '200':
+      description: all prefectures
+      content:
+        application/json:
+          schema:
+            type: array
+            $ref: "../components/schemas/Prefecture.yaml"
