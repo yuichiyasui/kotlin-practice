@@ -6,6 +6,7 @@ plugins {
     kotlin("jvm") version "1.6.10"
     kotlin("plugin.spring") version "1.6.10"
     id("org.openapi.generator") version "6.0.0"
+    id("org.flywaydb.flyway") version "8.5.12"
 }
 
 group = "com.example"
@@ -27,6 +28,13 @@ dependencies {
     implementation("org.springdoc:springdoc-openapi-data-rest:1.6.8")
     implementation("org.springdoc:springdoc-openapi-ui:1.6.8")
     implementation("org.springdoc:springdoc-openapi-kotlin:1.6.8")
+    implementation("org.flywaydb:flyway-core")
+}
+
+flyway {
+    url = "jdbc:postgresql://localhost:5433/postgres"
+    user = "postgres"
+    password = "postgres"
 }
 
 openApiGenerate {

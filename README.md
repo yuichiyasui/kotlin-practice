@@ -11,7 +11,7 @@ Kotlin, SpringBoot の学習用プロジェクト
 - mybatis
 
 ## 環境構築手順
-DBの起動
+1. DB の起動
 
 ```
 # コンテナを起動
@@ -23,6 +23,9 @@ docker exec -it [container_name] bash
 # コンテナを停止
 docker-compose down -v
 ```
+
+2. Gradle タスクの `flywayMigrate`を実行して DB の migration を実行
+3. SpringBoot を起動
 
 ## 開発手順
 1. Issues を立てる
