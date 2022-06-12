@@ -38,11 +38,11 @@ import kotlin.collections.Map
 interface PrefecturesApi {
 
     @Operation(
-        summary = "List all prefectures",
+        summary = "都道府県一覧を取得する",
         operationId = "getPrefectures",
         description = "",
         responses = [
-            ApiResponse(responseCode = "200", description = "all prefectures", content = [Content(schema = Schema(implementation = Prefecture::class))])
+            ApiResponse(responseCode = "200", description = "", content = [Content(schema = Schema(implementation = Prefecture::class))])
         ]
     )
     @RequestMapping(

@@ -4,13 +4,16 @@ type: object
 properties:
   id:
     type: integer
-    format: int64
+    description: 都道府県ID
+    example: 21
   name:
     type: string
     description: 都道府県名
+    example: 大阪府
   nameKana:
     type: string
     description: 都道府県名のふりがな
+    example: おおさかふ
 required:
   - id
   - name

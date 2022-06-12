@@ -15,19 +15,19 @@ import io.swagger.v3.oas.annotations.media.Schema
 
 /**
  * 都道府県情報
- * @param id 
+ * @param id 都道府県ID
  * @param name 都道府県名
  * @param nameKana 都道府県名のふりがな
  */
 data class Prefecture(
 
-    @Schema(example = "null", required = true, description = "")
-    @field:JsonProperty("id", required = true) val id: kotlin.Long,
+    @Schema(example = "21", required = true, description = "都道府県ID")
+    @field:JsonProperty("id", required = true) val id: kotlin.Int,
 
-    @Schema(example = "null", required = true, description = "都道府県名")
+    @Schema(example = "大阪府", required = true, description = "都道府県名")
     @field:JsonProperty("name", required = true) val name: kotlin.String,
 
-    @Schema(example = "null", required = true, description = "都道府県名のふりがな")
+    @Schema(example = "おおさかふ", required = true, description = "都道府県名のふりがな")
     @field:JsonProperty("nameKana", required = true) val nameKana: kotlin.String
 ) {
 

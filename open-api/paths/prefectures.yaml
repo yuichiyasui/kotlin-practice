@@ -1,11 +1,10 @@
 get:
-  summary: List all prefectures
+  summary: 都道府県一覧を取得する
   tags:
     - prefectures
   operationId: getPrefectures
   responses:
     '200':
-      description: all prefectures
       content:
         application/json:
           schema:
