@@ -1,10 +1,10 @@
 # kotlin-practice
 
-Kotlin, Springboot の学習用プロジェクト
+Kotlin, SpringBoot の学習用プロジェクト
 
 ## 開発環境
 - Kotlin
-- Spring Boot
+- SpringBoot
 - PostgreSQL
 - Docker
 - TablePlus
@@ -27,7 +27,15 @@ docker-compose down -v
 ## 開発手順
 1. Issues を立てる
 2. 立てた Issues を Projects に関連づける
-3. Issues に関連するPRを作成する
+3. Issues に関連する PR を作成する
+
+### Open API
+- 各エンドポイントの interface は Open API で定義する
+- 定義ファイルは open-api ディレクトリに格納する
+- controller の実装は Open API によって生成された interface, model を利用する
+
+### API ドキュメントの確認
+http://localhost:8080/swagger-ui/index.html
 
 ### 運用手順
 
