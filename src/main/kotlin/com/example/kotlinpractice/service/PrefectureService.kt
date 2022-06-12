@@ -10,6 +10,8 @@ class PrefectureService (
         ) {
 
     fun getAllPrefectures(): List<Prefecture> {
-        return prefectureMapper.findAll()
+        val prefectures = prefectureMapper.findAll()
+
+        return prefectures.map { prefecture -> Prefecture(prefecture.id, prefecture.name, prefecture.nameKana) }
     }
 }

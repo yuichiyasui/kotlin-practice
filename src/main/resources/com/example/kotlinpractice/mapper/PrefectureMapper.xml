@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.kotlinpractice.mapper.PrefectureMapper">
+    <select id="findAll" resultType="com.example.kotlinpractice.entity.Prefecture">
+        SELECT id, name, name_kana FROM prefectures;
+    </select>
+</mapper>
