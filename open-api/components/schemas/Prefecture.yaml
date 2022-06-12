@@ -1,0 +1,20 @@
+title: 都道府県
+description: 都道府県情報
+type: object
+properties:
+  id:
+    type: integer
+    description: 都道府県ID
+    example: 21
+  name:
+    type: string
+    description: 都道府県名
+    example: 大阪府
+  nameKana:
+    type: string
+    description: 都道府県名のふりがな
+    example: おおさかふ
+required:
+  - id
+  - name
+  - nameKana

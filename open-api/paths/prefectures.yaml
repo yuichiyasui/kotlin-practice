@@ -1,0 +1,13 @@
+get:
+  summary: 都道府県一覧を取得する
+  tags:
+    - prefectures
+  operationId: getPrefectures
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: "../components/schemas/Prefecture.yaml"
