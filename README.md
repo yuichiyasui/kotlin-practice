@@ -25,7 +25,12 @@ docker-compose down -v
 ```
 
 2. Gradle タスクの `flywayMigrate`を実行して DB の migration を実行
-3. SpringBoot を起動
+
+```
+./gradlew flywayMigrate
+```
+
+3. SpringBoot アプリケーションを起動
 
 ## 開発手順
 1. Issues を立てる
