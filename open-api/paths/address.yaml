@@ -1,0 +1,13 @@
+post:
+  summary: 連絡先を登録する
+  tags:
+    - address
+  operationId: registerAddress
+  requestBody:
+    $ref: "../components/requestBodies/RegisterAddressRequest.yaml"
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+

@@ -1,0 +1,58 @@
+required: true
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        firstName:
+          type: string
+          description: 名
+          example: 太郎
+        lastName:
+          type: string
+          description: 姓
+          example: 田中
+        firstNameKana:
+          type: string
+          description: 名(ふりがな)
+          example: たろう
+        lastNameKana:
+          type: string
+          description: 姓(ふりがな)
+          example: たなか
+        birthday:
+          type: string
+          format: date
+          description: 誕生日
+          example: 2000-01-01
+        gender:
+          $ref: "../schemas/Gender.yaml"
+        email:
+          type: string
+          format: email
+          description: メールアドレス
+          example: tanaka@kotlin-practice.com
+        prefectureId:
+          type: integer
+          description: 都道府県ID
+          example: 21
+        city:
+          type: string
+          description: 市区町村
+          example: 大阪市北区
+        block:
+          type: string
+          description: 番地
+          example: 梅田2丁目2-22-501
+        building:
+          type: string
+          description: 建物名
+          example: Kotlinマンション
+        phoneNumber:
+          type: string
+          description: 電話番号
+          example: "09012345678"
+      required:
+        - firstName
+        - lastName
+        - email
