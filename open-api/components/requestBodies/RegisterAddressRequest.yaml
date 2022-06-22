@@ -1,3 +1,4 @@
+required: true
 content:
   application/json:
     schema:
@@ -25,12 +26,7 @@ content:
           description: 誕生日
           example: 2000-01-01
         gender:
-          type: string
-          description: 性別
-          enum:
-            - Male
-            - Female
-          example: Male
+          $ref: "../schemas/Gender.yaml"
         email:
           type: string
           format: email
@@ -55,7 +51,7 @@ content:
         phoneNumber:
           type: string
           description: 電話番号
-          example: 09012345678
+          example: "09012345678"
       required:
         - firstName
         - lastName

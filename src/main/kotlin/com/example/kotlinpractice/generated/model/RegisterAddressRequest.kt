@@ -1,8 +1,8 @@
 package com.example.kotlinpractice.generated.model
 
 import java.util.Objects
+import com.example.kotlinpractice.generated.model.Gender
 import com.fasterxml.jackson.annotation.JsonProperty
-import com.fasterxml.jackson.annotation.JsonValue
 import javax.validation.constraints.DecimalMax
 import javax.validation.constraints.DecimalMin
 import javax.validation.constraints.Email
@@ -22,7 +22,7 @@ import io.swagger.v3.oas.annotations.media.Schema
  * @param firstNameKana 名(ふりがな)
  * @param lastNameKana 姓(ふりがな)
  * @param birthday 誕生日
- * @param gender 性別
+ * @param gender 
  * @param prefectureId 都道府県ID
  * @param city 市区町村
  * @param block 番地
@@ -51,8 +51,9 @@ data class RegisterAddressRequest(
     @Schema(example = "Sat Jan 01 09:00:00 JST 2000", description = "誕生日")
     @field:JsonProperty("birthday") val birthday: java.time.LocalDate? = null,
 
-    @Schema(example = "Male", description = "性別")
-    @field:JsonProperty("gender") val gender: RegisterAddressRequest.Gender? = null,
+    @field:Valid
+    @Schema(example = "null", description = "")
+    @field:JsonProperty("gender") val gender: Gender? = null,
 
     @Schema(example = "21", description = "都道府県ID")
     @field:JsonProperty("prefectureId") val prefectureId: kotlin.Int? = null,
@@ -66,19 +67,9 @@ data class RegisterAddressRequest(
     @Schema(example = "Kotlinマンション", description = "建物名")
     @field:JsonProperty("building") val building: kotlin.String? = null,
 
-    @Schema(example = "9.012345678E9", description = "電話番号")
+    @Schema(example = "09012345678", description = "電話番号")
     @field:JsonProperty("phoneNumber") val phoneNumber: kotlin.String? = null
 ) {
-
-    /**
-    * 性別
-    * Values: male,female
-    */
-    enum class Gender(val value: kotlin.String) {
-
-        @JsonProperty("Male") male("Male"),
-        @JsonProperty("Female") female("Female")
-    }
 
 }
 

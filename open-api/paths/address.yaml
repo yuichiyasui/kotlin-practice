@@ -10,7 +10,4 @@ post:
       content:
         application/json:
           schema:
-            type: string
-            enum:
-              - success
 

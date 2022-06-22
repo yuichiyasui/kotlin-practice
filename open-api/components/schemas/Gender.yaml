@@ -1,0 +1,8 @@
+description: 性別
+type: string
+nullable: true
+enum:
+  - Male
+  - Female
+  - null
+example: "Male"

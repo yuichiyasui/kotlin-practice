@@ -42,7 +42,7 @@ interface AddressApi {
         operationId = "registerAddress",
         description = "",
         responses = [
-            ApiResponse(responseCode = "200", description = "", content = [Content(schema = Schema(implementation = kotlin.String::class))])
+            ApiResponse(responseCode = "200", description = "")
         ]
     )
     @RequestMapping(
@@ -51,7 +51,7 @@ interface AddressApi {
             produces = ["application/json"],
             consumes = ["application/json"]
     )
-    fun registerAddress(@Parameter(description = "") @Valid @RequestBody(required = false) registerAddressRequest: RegisterAddressRequest?): ResponseEntity<kotlin.String> {
+    fun registerAddress(@Parameter(description = "", required = true) @Valid @RequestBody registerAddressRequest: RegisterAddressRequest): ResponseEntity<Unit> {
         return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
     }
 }

@@ -9,3 +9,10 @@ paths:
     $ref: './paths/prefectures.yaml'
   /address:
     $ref: './paths/address.yaml'
+
+components:
+  schemas:
+    Prefecture:
+      $ref: "./components/schemas/Prefecture"
+    Gender:
+      $ref: "./components/schemas/Gender"

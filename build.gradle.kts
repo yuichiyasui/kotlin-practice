@@ -49,6 +49,11 @@ openApiGenerate {
     generateModelTests.set(false)
     generateApiDocumentation.set(false)
     generateModelDocumentation.set(false)
+    additionalProperties.set(
+        mapOf(
+            "enumPropertyNaming" to "PascalCase"
+        )
+    )
     globalProperties.set(
         mapOf(
             "apis" to "",
