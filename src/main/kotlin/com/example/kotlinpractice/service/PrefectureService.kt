@@ -5,13 +5,12 @@ import com.example.kotlinpractice.mapper.PrefectureMapper
 import org.springframework.stereotype.Service
 
 @Service
-class PrefectureService (
-    private val prefectureMapper : PrefectureMapper
-        ) {
+class PrefectureService(
+  private val prefectureMapper: PrefectureMapper
+) {
+  fun getAllPrefectures(): List<Prefecture> {
+    val prefectures = prefectureMapper.findAll()
 
-    fun getAllPrefectures(): List<Prefecture> {
-        val prefectures = prefectureMapper.findAll()
-
-        return prefectures.map { prefecture -> Prefecture(prefecture.id, prefecture.name, prefecture.nameKana) }
-    }
+    return prefectures.map { prefecture -> Prefecture(prefecture.id, prefecture.name, prefecture.nameKana) }
+  }
 }

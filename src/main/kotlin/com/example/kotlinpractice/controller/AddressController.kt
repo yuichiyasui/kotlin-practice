@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.RestController
 
 @RestController
 class AddressController(private val addressService: AddressService) : AddressApi {
-    @Override
-    override fun registerAddress(registerAddressRequest: RegisterAddressRequest): ResponseEntity<Unit> {
-        addressService.registerAddress(registerAddressRequest)
-        return ResponseEntity(HttpStatus.OK)
-    }
+  @Override
+  override fun registerAddress(registerAddressRequest: RegisterAddressRequest): ResponseEntity<Unit> {
+    addressService.registerAddress(registerAddressRequest)
+    return ResponseEntity(HttpStatus.OK)
+  }
 }

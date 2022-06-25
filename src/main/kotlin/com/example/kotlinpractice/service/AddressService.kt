@@ -7,10 +7,10 @@ import org.springframework.stereotype.Service
 
 @Service
 class AddressService(
-    private val addressMapper: AddressMapper
+  private val addressMapper: AddressMapper
 ) {
-    fun registerAddress(registerAddressRequest: RegisterAddressRequest) {
-        val insertAddressInput = InsertAddressInput.ModelMapper.from(registerAddressRequest)
-        addressMapper.insert(insertAddressInput)
-    }
+  fun registerAddress(registerAddressRequest: RegisterAddressRequest) {
+    val insertAddressInput = InsertAddressInput.ModelMapper.from(registerAddressRequest)
+    addressMapper.insert(insertAddressInput)
+  }
 }

@@ -1,39 +1,39 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper
-        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.kotlinpractice.mapper.AddressMapper">
-    <insert id="insert" parameterType="com.example.kotlinpractice.entity.input.InsertAddressInput">
-        INSERT INTO addresses (
-            first_name,
-            last_name,
-            first_name_kana,
-            last_name_kana,
-            birthday,
-            gender,
-            email,
-            prefecture_id,
-            city,
-            block,
-            building,
-            phone_number,
-            created_at,
-            deleted
-        ) VALUES (
-            #{address.firstName,jdbcType=VARCHAR},
-            #{address.lastName,jdbcType=VARCHAR},
-            #{address.firstNameKana,jdbcType=VARCHAR},
-            #{address.lastNameKana,jdbcType=VARCHAR},
-            #{address.birthday,jdbcType=DATE},
-            #{address.gender}::gender,
-            #{address.email,jdbcType=VARCHAR},
-            #{address.prefectureId,jdbcType=INTEGER},
-            #{address.city,jdbcType=VARCHAR},
-            #{address.block,jdbcType=VARCHAR},
-            #{address.building,jdbcType=VARCHAR},
-            #{address.phoneNumber,jdbcType=VARCHAR},
-            CURRENT_TIMESTAMP,
-            false
-        )
-    </insert>
+  <insert id="insert" parameterType="com.example.kotlinpractice.entity.input.InsertAddressInput">
+    INSERT INTO addresses (
+    first_name,
+    last_name,
+    first_name_kana,
+    last_name_kana,
+    birthday,
+    gender,
+    email,
+    prefecture_id,
+    city,
+    block,
+    building,
+    phone_number,
+    created_at,
+    deleted
+    ) VALUES (
+    #{address.firstName,jdbcType=VARCHAR},
+    #{address.lastName,jdbcType=VARCHAR},
+    #{address.firstNameKana,jdbcType=VARCHAR},
+    #{address.lastNameKana,jdbcType=VARCHAR},
+    #{address.birthday,jdbcType=DATE},
+    #{address.gender}::gender,
+    #{address.email,jdbcType=VARCHAR},
+    #{address.prefectureId,jdbcType=INTEGER},
+    #{address.city,jdbcType=VARCHAR},
+    #{address.block,jdbcType=VARCHAR},
+    #{address.building,jdbcType=VARCHAR},
+    #{address.phoneNumber,jdbcType=VARCHAR},
+    CURRENT_TIMESTAMP,
+    false
+    )
+  </insert>
 </mapper>

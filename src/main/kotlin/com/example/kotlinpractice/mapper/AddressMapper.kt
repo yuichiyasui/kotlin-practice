@@ -6,5 +6,5 @@ import org.apache.ibatis.annotations.Param
 
 @Mapper
 interface AddressMapper {
-    fun insert (@Param("address") insertAddressInput: InsertAddressInput)
+  fun insert(@Param("address") insertAddressInput: InsertAddressInput)
 }

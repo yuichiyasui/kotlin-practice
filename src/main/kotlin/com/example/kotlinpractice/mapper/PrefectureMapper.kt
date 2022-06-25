@@ -6,5 +6,5 @@ import org.apache.ibatis.annotations.Select
 
 @Mapper
 interface PrefectureMapper {
-    fun findAll(): List<Prefecture>
+  fun findAll(): List<Prefecture>
 }
