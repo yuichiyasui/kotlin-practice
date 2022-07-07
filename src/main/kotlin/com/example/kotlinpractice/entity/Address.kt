@@ -13,7 +13,7 @@ data class Address(
   val birthday: Date?,
   val gender: Gender?,
   val email: String,
-  val prefectureId: Int?,
+  val prefecture: Prefecture?,
   val city: String?,
   val block: String?,
   val building: String?,

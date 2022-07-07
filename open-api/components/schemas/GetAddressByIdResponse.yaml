@@ -1,0 +1,65 @@
+title: GetAddressByIdResponse
+description: 連絡先情報
+type: object
+properties:
+  id:
+    type: integer
+    description: 連絡先ID
+    example: 21
+  firstName:
+    type: string
+    description: 名
+    example: 太郎
+  lastName:
+    type: string
+    description: 姓
+    example: 田中
+  firstNameKana:
+    type: string
+    description: 名(ふりがな)
+    example: たろう
+  lastNameKana:
+    type: string
+    description: 姓(ふりがな)
+    example: たなか
+  birthday:
+    type: string
+    format: date
+    description: 誕生日
+    example: 2000-01-01
+  gender:
+    $ref: "../schemas/Gender.yaml"
+  email:
+    type: string
+    format: email
+    description: メールアドレス
+    example: tanaka@kotlin-practice.com
+  prefecture:
+    $ref: "../schemas/Prefecture.yaml"
+  city:
+    type: string
+    description: 市区町村
+    example: 大阪市北区
+  block:
+    type: string
+    description: 番地
+    example: 梅田2丁目2-22-501
+  building:
+    type: string
+    description: 建物名
+    example: Kotlinマンション
+  phoneNumber:
+    type: string
+    description: 電話番号
+    example: "09012345678"
+  createdAt:
+    type: string
+    description: 作成日
+  updatedAt:
+    type: string
+    description: 更新日
+required:
+  - id
+  - name
+  - email
+  - createdAt

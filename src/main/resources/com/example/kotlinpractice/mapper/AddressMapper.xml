@@ -36,4 +36,52 @@
     false
     )
   </insert>
+  <select id="selectById" parameterType="_int" resultMap="addressMap" >
+    SELECT
+    addresses.id AS address_id,
+    first_name,
+    last_name,
+    first_name_kana,
+    last_name_kana,
+    birthday,
+    gender,
+    email,
+    city,
+    block,
+    building,
+    phone_number,
+    created_at,
+    updated_at,
+    deleted_at,
+    deleted,
+    prefectures.id AS prefecture_id,
+    prefectures.name AS prefecture_name,
+    prefectures.name_kana AS prefecture_name_kana
+    FROM addresses
+    JOIN prefectures ON addresses.prefecture_id = prefectures.id
+    WHERE addresses.id = #{id}
+  </select>
+  <resultMap id="addressMap" type="com.example.kotlinpractice.entity.Address">
+    <id column="address_id" property="id" />
+    <result column="first_name" property="firstName" />
+    <result column="last_name" property="lastName" />
+    <result column="first_name_kana" property="firstNameKana" />
+    <result column="last_name_kana" property="lastNameKana" />
+    <result column="birthday" property="birthday" />
+    <result column="gender" property="gender" />
+    <result column="email" property="email" />
+    <result column="city" property="city" />
+    <result column="block" property="block" />
+    <result column="building" property="building" />
+    <result column="phone_number" property="phoneNumber" />
+    <result column="created_at" property="createdAt" />
+    <result column="updated_at" property="updatedAt" />
+    <result column="deleted_at" property="deletedAt" />
+    <result column="deleted" property="deleted" />
+    <association property="prefecture" javaType="com.example.kotlinpractice.entity.Prefecture">
+      <id column="prefecture_id" property="id" />
+      <result column="prefecture_name" property="name" />
+      <result column="prefecture_name_kana" property="nameKana" />
+    </association>
+  </resultMap>
 </mapper>

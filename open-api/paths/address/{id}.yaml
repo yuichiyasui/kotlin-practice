@@ -1,0 +1,25 @@
+get:
+  summary: IDで指定した連絡先を取得する
+  tags:
+    - address
+  operationId: getAddressById
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/GetAddressByIdResponse"
+parameters:
+- name: id
+  in: path
+  description: 連絡先ID
+  required: true
+  schema:
+    type: integer
+    description: 連絡先ID
+    example: 21
+
+components:
+  schemas:
+    GetAddressByIdResponse:
+      $ref: "../../components/schemas/GetAddressByIdResponse.yaml"
