@@ -7,6 +7,7 @@ plugins {
   kotlin("plugin.spring") version "1.6.10"
   id("org.openapi.generator") version "6.0.0"
   id("org.flywaydb.flyway") version "8.5.12"
+  id("org.jetbrains.kotlin.plugin.noarg") version "1.3.41"
 }
 
 group = "com.example"
@@ -67,6 +68,10 @@ openApiGenerate {
       "skipDefaultInterface" to "true"
     )
   )
+}
+
+noArg {
+  annotation("com.example.kotlinpractice.annotation.NoArg")
 }
 
 tasks.withType<KotlinCompile> {

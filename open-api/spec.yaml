@@ -6,9 +6,11 @@ servers:
   - url: localhost:8080
 paths:
   /prefectures:
-    $ref: './paths/prefectures.yaml'
+    $ref: "./paths/prefectures.yaml"
   /address:
-    $ref: './paths/address.yaml'
+    $ref: "./paths/address.yaml"
+  /address/{id}:
+    $ref: "./paths/address/{id}.yaml"
 
 components:
   schemas:

@@ -5,6 +5,7 @@
 */
 package com.example.kotlinpractice.generated.api
 
+import com.example.kotlinpractice.generated.model.GetAddressByIdResponse
 import com.example.kotlinpractice.generated.model.RegisterAddressRequest
 import io.swagger.v3.oas.annotations.*
 import io.swagger.v3.oas.annotations.enums.*
@@ -36,6 +37,23 @@ import kotlin.collections.Map
 @Validated
 @RequestMapping("\${api.base-path:}")
 interface AddressApi {
+
+    @Operation(
+        summary = "IDで指定した連絡先を取得する",
+        operationId = "getAddressById",
+        description = "",
+        responses = [
+            ApiResponse(responseCode = "200", description = "", content = [Content(schema = Schema(implementation = GetAddressByIdResponse::class))])
+        ]
+    )
+    @RequestMapping(
+            method = [RequestMethod.GET],
+            value = ["/address/{id}"],
+            produces = ["application/json"]
+    )
+    fun getAddressById(@Parameter(description = "連絡先ID", required = true) @PathVariable("id") id: kotlin.Int): ResponseEntity<GetAddressByIdResponse> {
+        return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
+    }
 
     @Operation(
         summary = "連絡先を登録する",
