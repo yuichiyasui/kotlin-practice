@@ -1,9 +1,11 @@
 package com.example.kotlinpractice.entity
 
+import com.example.kotlinpractice.annotation.NoArg
 import com.example.kotlinpractice.generated.model.Gender
 import java.sql.Timestamp
 import java.util.Date
 
+@NoArg
 data class Address(
   val id: Int,
   val firstName: String,
